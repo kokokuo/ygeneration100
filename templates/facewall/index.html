@@ -1,0 +1,15 @@
+<!-- 百人百臉牆 -->
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block resourcefiles %}
+<!-- photo wall -->
+<script type="text/javascript" src="{% static "photowall/jquery-photowall.js" %}">></script>
+<link rel="stylesheet" type="text/css" src=" {% static "photowall/jquery-photowall.css" %}">
+<!-- Free wall -->
+<script type="text/javascript" src="{% static "freewall/freewall.js" %}"></script>
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}

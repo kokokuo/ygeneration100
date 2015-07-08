@@ -1,0 +1,1 @@
+web: gunicorn richevent.wsgi --log-file -

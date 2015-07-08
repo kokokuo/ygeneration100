@@ -1,0 +1,46 @@
+<!-- 快問快答牆 -->
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block resourcefiles %}
+<!-- photo wall -->
+
+<script type="text/javascript" src="{% static "js/facewall.js" %}"></script>
+<link rel="stylesheet" href="{% static "css/facewall.css" %}">
+
+<!--
+<link rel="stylesheet" href="{% static "css/transitions.css" %}">
+<script type="text/javascript" src="{% static "collagePlus/jquery.collagePlus.min.js" %}"></script>
+<script type="text/javascript" src="{% static "collagePlus/jquery.collageCaption.min.js" %}"></script>
+<script type="text/javascript" src="{% static "collagePlus/jquery.removeWhitespace.min.js" %}"></script>
+-->
+<script type="text/javascript" src="{% static "Nested/jquery.nested.js" %}"></script>
+<script type="text/javascript" src="{% static "Nested/makeboxes.js" %}"></script>
+<!-- Free wall -->
+<!-- <script type="text/javascript" src="{% static "freewall/freewall.js" %}"></script> -->
+{% endblock %}
+
+{% block content %}
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="wall_section_title">
+					<h3>
+						百人百臉 - 快問快答
+					</h3>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- 內容：活動介紹-->
+	<section>
+		<div id="container" >
+			{% for face in fast_ques_faces %}
+						<!-- <a href="#myModal" data-toggle="modal"> -->
+						<img src="{% static face %}" class="open-popup-link box" alt="...">
+			{% endfor %}
+		</div>
+	
+	  
+	</section>	
+{% endblock %}
