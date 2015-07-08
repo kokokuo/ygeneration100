@@ -1,1 +1,1 @@
-web: gunicorn ygeneration.wsgi --log-file -
+web: gunicorn ygeneration.wsgi --log-file-
