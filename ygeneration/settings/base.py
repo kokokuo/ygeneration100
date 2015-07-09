@@ -96,3 +96,6 @@ STATICFILES_DIRS = (
 )
 MEDIA_ROOT = 'media'
 MEDIA_URL = '/media/'
+
+# Crispy Form
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
