@@ -9,8 +9,10 @@
 		<script  src="{% static "js/jquery-1.11.3.min.js" %}"></script>
 
 		<!-- bootstrap -->
-		<link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
-		<link rel="stylesheet" href="{% static "css/bootstrap-theme.min.css" %}">
+		<!-- theme must first , then will be 3 theme-->
+		<link rel="stylesheet" href="{% static "css/bootstrap-theme.css" %}">
+		<link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
+		
 		<script  src="{% static "js/bootstrap.min.js" %}"></script>
 		<!-- CDN Bootstrap -->
 		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
@@ -88,9 +90,9 @@
 						<ul class="nav navbar-nav navbar-right">
 							<!-- <li><a href="../navbar/">百人百臉牆</a></li> -->
 							<li><a href="{% url 'ygeneration.views.activity_intro' %}">活動介紹</a></li>
-							<!--
-							<li><a href="#">我想投稿<span class="sr-only">(current)</span></a></li>
-							-->
+							
+							<li><a href="{% url 'facewall.views.signup' %}">我想投稿<span class="sr-only">(current)</span></a></li>
+							
 							<!--
 							<li class="active"><a href="./">我想投稿<span class="sr-only">(current)</span></a></li>
 							-->
@@ -139,9 +141,9 @@
 	                            <a href="">
 	                                <p>活動介紹</p>
 	                            </a>
-	                            <!-- <a href="">
+	                            <a href="{% url 'facewall.views.signup' %}">
 	                                <p>我想投稿</p>
-	                            </a> -->
+	                            </a>
 	                    </div>
 	                    <div class="col-md-2">
 	                    		

@@ -1,0 +1,36 @@
+ <!-- 投稿頁 -->
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% load crispy_forms_tags %}
+
+{% block resourcefiles %}
+<link rel="stylesheet" href="{% static "css/facewall.css" %}">
+{% endblock %}
+
+{% block content %}
+<section class="green_back">
+		<div class="container">
+			<div class="row section_title">
+				<h3>
+					{{ title }}
+				</h3>
+			</div>
+		</div>
+</section>
+<section>
+	<div class="container">
+		<div class="row section_content">
+		<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<form method="POST" action="">
+					{% csrf_token %}
+					{{ form|crispy }}
+					<input class="btn btn-success signup_btn" type="submit" value="投稿完成"/>
+				</form> 
+			</div>
+		</div>
+		<div class="col-md-4"></div>
+	</div>
+</section>
+{% endblock %}

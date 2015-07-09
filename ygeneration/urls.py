@@ -10,6 +10,7 @@ urlpatterns = patterns(
 	url(r'^activity_intro/$', 'ygeneration.views.activity_intro'),
 	url(r'^team_intro/$', 'ygeneration.views.team_intro'),
 	url(r'^facewall/index/$', 'facewall.views.index'),
+	url(r'^facewall/signup/$', 'facewall.views.signup'),
 	url(r'^fastquestion/index/$', 'fastquestion.views.index'),
 	url(r'^admin/', include(admin.site.urls)),
 )
