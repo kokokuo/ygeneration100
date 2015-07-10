@@ -1,0 +1,34 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Oops!此網頁不存在唷</title>
+	<script  src="{% static "js/jquery-1.11.3.min.js" %}"></script>
+
+	<!-- bootstrap -->
+	<!-- theme must first , then will be 3 theme-->
+	<link rel="stylesheet" href="{% static "css/bootstrap-theme.css" %}">
+	<link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
+	
+	<script  src="{% static "js/bootstrap.min.js" %}"></script>
+
+	<link rel="stylesheet" href="{% static "css/error.css" %}">
+</head>
+<body>
+	<article>
+		<section>
+			<div class="container">
+				<div class='row error_section_title'>
+					<h1>
+						<span class="red_color">O</span><span class="blue_color">o</span><span class="yellow_color">p</span><span class="green_color">s</span> :(
+					</h1>
+					<h3>HTTP 404 此網頁不存在唷</h3>
+					<h3>點選這裡返回</h3> 
+					<a class="btn btn-info" href="{% url 'home' %}">首頁</a>
+
+				</div>
+			</div>
+		</section>
+	</article>
+</body>
+</html>

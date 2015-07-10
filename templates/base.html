@@ -61,7 +61,7 @@
 						</button>
 						<!-- RWD Mobile mode，navbar can show by icon -->
 						<!-- logo -->
-						<a class="navbar-brand" href="{% url 'ygeneration.views.home' %}">
+						<a class="navbar-brand" href="{% url 'home' %}">
         					<img id="everrich-logo" alt="Everrich Logo" src="{% static "images/everrich-logo.svg" %}">
       					</a>
 
@@ -89,9 +89,9 @@
 						-->
 						<ul class="nav navbar-nav navbar-right">
 							<!-- <li><a href="../navbar/">百人百臉牆</a></li> -->
-							<li><a href="{% url 'ygeneration.views.activity_intro' %}">活動介紹</a></li>
+							<li><a href="{% url 'activity_intro' %}">活動介紹</a></li>
 							
-							<li><a href="{% url 'facewall.views.signup' %}">我想投稿<span class="sr-only">(current)</span></a></li>
+							<li><a href="{% url 'facewall_add' %}">我想投稿<span class="sr-only">(current)</span></a></li>
 							
 							<!--
 							<li class="active"><a href="./">我想投稿<span class="sr-only">(current)</span></a></li>
@@ -129,7 +129,7 @@
 	                            <a href="https://www.everrich.com/tw/">
 	                                <p>Everrich昇恆昌</p>
 	                            </a>
-	                             <a href="{% url 'ygeneration.views.team_intro' %}">
+	                             <a href="{% url 'team_intro' %}">
 	                                <p>Bepci團隊</p>
 	                            </a>
 	                        </div>
@@ -138,10 +138,10 @@
 	                             <!-- <a href="">
 	                                <p>百人百臉牆</p>
 	                            </a> -->
-	                            <a href="">
+	                            <a href="{% url 'activity_intro' %}">
 	                                <p>活動介紹</p>
 	                            </a>
-	                            <a href="{% url 'facewall.views.signup' %}">
+	                            <a href="{% url 'facewall_add' %}">
 	                                <p>我想投稿</p>
 	                            </a>
 	                    </div>

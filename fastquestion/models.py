@@ -5,7 +5,7 @@ from django.db import models
 class FastQuestion(models.Model):
 	description = models.TextField(blank=True, null=True)
 	cover_image = models.ImageField(upload_to='upload/fast_questions')
-	youtube_url = models.TextField(blank=False, null=False)
+	youtube_url = models.URLField(blank=False, null=False)
 	timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
 	updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 

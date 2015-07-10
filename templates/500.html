@@ -1,0 +1,32 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Oops!伺服器錯誤</title>
+	<script  src="{% static "js/jquery-1.11.3.min.js" %}"></script>
+
+	<!-- bootstrap -->
+	<!-- theme must first , then will be 3 theme-->
+	<link rel="stylesheet" href="{% static "css/bootstrap-theme.css" %}">
+	<link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
+	
+	<script  src="{% static "js/bootstrap.min.js" %}"></script>
+
+	<link rel="stylesheet" href="{% static "css/error.css" %}">
+</head>
+<body>
+	<article>
+		<section>
+			<div class="container">
+				<div class='row error_section_title'>
+					<h1>
+						<span class="red_color">O</span><span class="blue_color">o</span><span class="yellow_color">p</span><span class="green_color">s</span> :(
+					</h1>
+					<h3>HTTP 500 伺服器錯誤</h3>
+					<h3>我們會盡快排除此錯誤，不好意思QQ </h3>
+				</div>
+			</div>
+		</section>
+	</article>
+</body>
+</html>

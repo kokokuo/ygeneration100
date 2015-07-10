@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block resourcefiles %}
+<link rel="stylesheet" href="{% static "css/facewall.css" %}">
+{% endblock %}
+
+{% block content %}
+<section>
+	<div class="container">
+		<div class="row wall_section_title">
+			<h3>
+				{{title}}
+			</h3>
+			{% if name %}
+				<p>感謝{{ name }}願意參與百人百臉活動，分享您的想法。</p>
+			{% else %}
+				<p>感謝您願意參與百人百臉活動，分享您的想法。</p>
+			{% endif %}
+		</div>
+	</div>
+</section>
+{% endblock %}
