@@ -1,22 +1,60 @@
 # -*- coding: utf-8 -*-
 from django import forms
 from .models import OnlineQuestion
-# Pillow
-from PIL import Image
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Submit, Layout, Div, MultiField
 import re
 
 class OnlineQuestionForm(forms.ModelForm):
 	class Meta:
 		model = OnlineQuestion
 		# Show field on th form
-		fields = ['name', 'contact_email', 'content', 'face_image', 'youtube_url']
+		fields = [
+			'name', 'nickname', 'gender',
+			'birth_year','birth_month','birth_day',
+			'contact_email','face_image',
+			'content', 'youtube_url', 'topic_num']
+
 		labels = {
-			'name': '名稱',
+			'name': '姓名',
+			'nickname': '暱稱',
+			'gender': '性別',
+			'birth_year': '年',
+			'birth_month': '月',
+			'birth_day': '日',
 			'contact_email': '連絡信箱',
 			'content': '介紹',
 			'face_image': '大頭貼',
-			'youtube_url': 'Youtube 影片連結'
+			'youtube_url': 'Youtube 影片連結',
+			'topic_num': '投稿題目'
 		}
+		widgets = {
+			'gender': forms.RadioSelect,
+			'topic_num': forms.Select(
+				choices=[
+				# 前面是值後面是顯示
+				('Ques1', '如果外國人來台灣，會帶他去哪邊玩？'),
+				('Ques2', '在機場發生的奇聞軼事或有趣/麻煩事件'),
+				('Ques3','在機場都消費什麼？'), ('Ques4','最喜歡的異國文化？'), ('Ques5','對你來說什麼是小確幸')]
+			),
+		}
+
+	def __init__(self, *args, **kwargs):
+		super(OnlineQuestionForm,self).__init__(*args, **kwargs)
+ 		# Set layout for fields.
+ 		self.helper = FormHelper()
+ 		self.helper.layout = Layout(
+ 			'name','nickname',
+ 			Div('gender'),
+ 			Div(
+ 				Div('birth_year',css_class="col-md-2"),
+ 				Div('birth_month',css_class="col-md-1"),
+ 				Div('birth_day',css_class="col-md-1"),
+ 				css_class = 'row'
+ 				),
+		)
+ 		self.helper.add_input(Submit('submit', 'Submit'))
+
 
 	def clean_name(self):
 		name = self.cleaned_data.get('name')
