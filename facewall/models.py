@@ -7,7 +7,8 @@ class OnlineQuestion(models.Model):
 	nickname = models.CharField(max_length=20, blank=False, null=False)
 
 	# 如果要連結到Radio, 指定布林值對應的選擇，如果預設是不選，則設定default = None
-	gender = models.BooleanField(default=None, choices=((True, '男性'), (False, '女性')))
+	gender = models.BooleanField(default=None, null=False,
+		choices=((True, '男性'), (False, '女性')))
 
 	birth_year = models.IntegerField(max_length=4,
 		default=None, blank=False, null=False,
