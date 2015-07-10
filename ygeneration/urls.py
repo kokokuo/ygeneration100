@@ -11,7 +11,7 @@ urlpatterns = patterns(
 	url(r'^team_intro/$', 'ygeneration.views.team_intro', name="team_intro"),
 	url(r'^facewall/index/$', 'facewall.views.index', name="facewall_index"),
 	url(r'^facewall/signup/$', 'facewall.views.add', name="facewall_add"),
-	url(r'^fastquestion/index/$', 'fastquestion.views.index'),
+	# url(r'^fastquestion/index/$', 'fastquestion.views.index'),
 	url(r'^bepci/admin/', include(admin.site.urls)),
 )
 
