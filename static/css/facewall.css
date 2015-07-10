@@ -61,3 +61,14 @@
 }
 
 
+/* = = = == = = = ================*/
+
+.agree_report {
+	border: 1px solid #e9e9e9;
+	background-color: #FFF;	
+	height: 400px;
+	overflow-y:y: scroll;
+	margin-right: auto;
+	margin-left: auto;
+
+}
