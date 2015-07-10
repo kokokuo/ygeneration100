@@ -1,6 +1,6 @@
 body * {
-	font-family: 'Shift',"Helvetica Neue",Helvetica,Arial,"Hiragino Kaku Gothic ProN",
-	"Hiragino Maru Gothic ProN","Microsoft Yahei","STHeiti","微軟正黑體",sans-serif;
+	font-family: "微軟正黑體",'Shift',"Helvetica Neue",Helvetica,Arial,"Hiragino Kaku Gothic ProN",
+	"Hiragino Maru Gothic ProN","Microsoft Yahei","STHeiti",sans-serif;
 }
 
 .container {
@@ -88,7 +88,7 @@ a:hover{
 	margin-left: auto;
 	margin-right: auto;
 	color: #FFF;
-	font-family: Arial,sans-serif;
+	font-family: "微軟正黑體",Arial,sans-serif;
 	font-size: 32px;
 }
 
@@ -307,7 +307,7 @@ a:hover{
 }
 
 .footer_section h3 {
-	font-family: 'Shift', sans-serif;
+	font-family: "微軟正黑體",'Shift', sans-serif;
 	font-weight: bold;
 	color: #FFF;
 	font-size: 18px;
@@ -342,7 +342,7 @@ a:hover{
 }
 .copyright p {
 	border-top: 1px solid #FFF;
-	font-family: 'Shift', sans-serif;
+	font-family: "微軟正黑體",'Shift', sans-serif;
 	font-weight: bold;
 	color: #FFF;
 	font-size: 12px;
