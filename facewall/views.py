@@ -3,16 +3,16 @@ from django.shortcuts import render
 
 from .forms import OnlineQuestionForm
 # Create your views here.
-# Upload video
+# 索引頁
 def index(request):
 	return render(request, 'facewall/index.html', {})
 
 def add(request):
-	# 需要透過post or None來使得表單驗證失敗時，可以顯示錯誤訊息
-	# request.FILES 表示表單有檔案使得檔案被上傳成功，
-
-	form = OnlineQuestionForm(request.POST or None, request.FILES)
+	# 一開始透過None 表示為空白表單
+	form = OnlineQuestionForm(None)
+	# 如果為Post新建一個表單，並指定request.FILES 表示表單有檔案，使得檔案被上傳成功，
 	if request.method == 'POST':
+		form = OnlineQuestionForm(request.POST, request.FILES)
 		# check input data and clean_data success
 		if form.is_valid():
 			form.save()

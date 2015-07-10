@@ -1,15 +1,105 @@
-<!-- 百人百臉牆 -->
+<!-- 首頁 -->
 {% extends "base.html" %}
 {% load staticfiles %}
 
+
 {% block resourcefiles %}
-<!-- photo wall -->
-<script type="text/javascript" src="{% static "photowall/jquery-photowall.js" %}">></script>
-<link rel="stylesheet" type="text/css" src=" {% static "photowall/jquery-photowall.css" %}">
-<!-- Free wall -->
-<script type="text/javascript" src="{% static "freewall/freewall.js" %}"></script>
+<!-- my website team_intro -->
+<link rel="stylesheet" href="{% static "css/facewall.css" %}">	
+{% endblock %}
+
+{% block banner%}
 {% endblock %}
 
 {% block content %}
-
+	<!-- 標題：活動流程-->
+	<section class="green_back">
+		<div class="container">
+			<div class="row section_title">
+				<h3>
+					投稿步驟
+				</h3>
+		</div>
+	</section>
+	<section>
+		<div class="container">
+			<div class="row">
+				<!-- 步驟一 -->
+				<div class="ques_section_content">
+					<div class="col-md-6 col-md-offset-1">
+						<h3>
+							1.於快問快答五題中選一題題目：
+						</h3>
+						<ul>
+							<li>
+								如果外國人來台灣，會帶他去哪邊玩？			
+							</li>
+							<li>
+								在機場發生的奇聞軼事或有趣/麻煩事件	
+							</li>
+							<li>
+								(3)在機場都消費什麼？							
+							</li>
+							<li>
+								(4)最喜歡的異國文化？							
+							</li>
+							<li>
+								(5)對你來說什麼是小確幸
+							</li>
+						</ul>
+					</div>
+					<div class="col-md-4 col-md-offset-1">
+							<img src="{% static "images/flow1_ques.png" %}">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<!-- 步驟一 -->
+				<div class="ques_section_content">
+					<div class="col-md-6 col-md-offset-1">
+						<h3>
+							2.自行拍攝30秒內之回答影片後上傳至youtube
+						</h3>
+						<p>
+							標題為「百人百臉＿百出（名字綽號）的生活態度，並設為公開
+						</p>
+					</div>
+					<div class="col-md-4 col-md-offset-1">
+						<img src="{% static "images/flow2_youtube.png" %}">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<!-- 步驟一 -->
+				<div class="ques_section_content">
+					<div class="col-md-6 col-md-offset-1">
+						<h3>
+							3.於投稿欄中填妥基本資料及youtube影片網址
+						</h3>
+					</div>
+					<div class="col-md-4 col-md-offset-1">
+						<img src="{% static "images/flow3_link.png" %}">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<!-- 步驟一 -->
+				<div class="ques_section_content">
+					<div class="col-md-6 col-md-offset-1">
+						<h3>
+							4.完成後，我們將於後台審核影片，若通過即可登上百人百臉頻道與大家分享
+						</h3>
+					</div>
+					<div class="col-md-4 col-md-offset-1">
+						<img src="{% static "images/flow4_ok.png" %}">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="ques_section_title">
+					<p><spane style="color:red;">＊</spane>小提醒：回答越精彩越有創意的影片，更容易被徵選上唷！<p>
+				</div>
+			</div>
+		</div>
+	</section>
 {% endblock %}

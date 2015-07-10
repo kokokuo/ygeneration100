@@ -9,7 +9,7 @@ urlpatterns = patterns(
 	url(r'^home/$', 'ygeneration.views.home', name='home'),
 	url(r'^activity_intro/$', 'ygeneration.views.activity_intro', name='activity_intro'),
 	url(r'^team_intro/$', 'ygeneration.views.team_intro', name="team_intro"),
-	url(r'^facewall/index/$', 'facewall.views.index'),
+	url(r'^facewall/index/$', 'facewall.views.index', name="facewall_index"),
 	url(r'^facewall/signup/$', 'facewall.views.add', name="facewall_add"),
 	url(r'^fastquestion/index/$', 'fastquestion.views.index'),
 	url(r'^bepci/admin/', include(admin.site.urls)),
