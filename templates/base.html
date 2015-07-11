@@ -90,7 +90,8 @@
 						<ul class="nav navbar-nav navbar-right">
 							<!-- <li><a href="../navbar/">百人百臉牆</a></li> -->
 							<li><a href="{% url 'activity_intro' %}">活動介紹</a></li>
-							<li><a href="{% url 'facewall_index' %}">我想投稿<span class="sr-only">(current)</span></a></li>
+							<li><a href="{% url 'facewall_index' %}">活動步驟</a></li>
+							<li><a href="{% url 'facewall_add' %}">我想投稿<span class="sr-only">(current)</span></a></li>
 							
 							<!--
 							<li class="active"><a href="./">我想投稿<span class="sr-only">(current)</span></a></li>
@@ -123,7 +124,7 @@
 	                    </div>
                 	</div>
 	                <div class="service_block">
-	                    <div class="col-md-2 col-md-offset-1">
+	                    <div class="col-md-2 col-md-offset-1 col-xs-6">
 	                            <h3>關於我們</h3>
 	                            <a href="https://www.everrich.com/tw/">
 	                                <p>Everrich昇恆昌</p>
@@ -132,7 +133,7 @@
 	                                <p>Bepci團隊</p>
 	                            </a>
 	                        </div>
-	                    <div class="col-md-2">
+	                    <div class="col-md-2 col-xs-5">
 	                            <h3>網站功能</h3>
 	                             <!-- <a href="">
 	                                <p>百人百臉牆</p>
@@ -140,7 +141,10 @@
 	                            <a href="{% url 'activity_intro' %}">
 	                                <p>活動介紹</p>
 	                            </a>
-                              	<a href="{% url 'facewall_index' %}">
+	                            <a href="{% url 'facewall_index' %}">
+	                                <p>活動步驟</p>
+	                            </a>
+                              	<a href="{% url 'facewall_add' %}">
 	                                <p>我想投稿</p>
 	                            </a>
 	                    </div>
