@@ -23,8 +23,8 @@
 }
 
 .small_bound {
-	padding-left: 150px;
-	padding-right: 150px;
+	padding-left: 50px;
+	padding-right: 50px;
 }
 /* team介紹 位置調整 */
 .team_section {
@@ -34,6 +34,7 @@
 .team_section img{
 	width: 250px;
 	height: 250px;
+	margin-left: 50px;
 }
 /* 右邊的文字內容 */
 .team_content {
