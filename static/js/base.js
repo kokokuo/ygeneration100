@@ -43,6 +43,25 @@ $(document).ready(function(){
 		//slider : right to left direction(image index),if set true ,then you will add a custom attribute tag called 'dir' 
 		//and set value is rtl
 		rtl: true,
+
+		// Not Success
+		// mobileFirst = true,
+		// responsive = [
+		// 	{
+		// 		breakpoint: 600,
+		// 		settings: {
+		// 			slidesToShow: 2,
+		// 			slidesToScroll: 2
+		//       	}
+		//     },
+		//     {
+		// 		breakpoint: 480,
+		// 		settings: {
+		// 			slidesToShow: 1,
+		// 			slidesToScroll: 1
+		// 		}
+  //   		}
+		// ]
 	});
 
 	

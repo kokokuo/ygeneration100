@@ -70,21 +70,23 @@
 			<div class="container section_content content_center">
 				
 				<div class="row">
-					<p> 
-						已經分享的朋友們
-					</p>
-					<div class="fast_ques_slide_left" dir="rtl">
-						{% for photo in fast_ques_photo %}
-							<div>
-								<h3>
-									<!-- <a href="#myModal" data-toggle="modal"> -->
-										<!-- slick -->
-										<img src="{% static photo %}" class="open-popup-link" alt="...">
-									<!-- </a> -->
-								</h3>
-							</div>
-						{% endfor %}
-					</div>	
+					<div class="col-md-12">
+						<p> 
+							已經分享的朋友們
+						</p>
+						<div class="fast_ques_slide_left" dir="rtl">
+							{% for photo in fast_ques_photo %}
+								<div>
+									<h3>
+										<!-- <a href="#myModal" data-toggle="modal"> -->
+											<!-- slick -->
+											<img src="{% static photo %}" class="open-popup-link" alt="...">
+										<!-- </a> -->
+									</h3>
+								</div>
+							{% endfor %}
+						</div>	
+					</div>
 				</div>
 			</div>
 		</section>
