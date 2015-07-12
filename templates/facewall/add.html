@@ -4,6 +4,7 @@
 
 {% load crispy_forms_tags %}
 
+
 {% block resourcefiles %}
 <link rel="stylesheet" href="{% static "css/facewall.css" %}">
 {% endblock %}
@@ -34,8 +35,7 @@
 
 			二、立書人個人資料之蒐集及使用：
 			(一)依前項所述之事項，需要提供以下個人資料：姓名、聯絡方式及其他可以直接或間接方式識別該個人之資料。
-			(二)您可自由選擇是否提供本會您的個人資料，若您所提供之個人資料不完整時，本團    
-			   隊可能無法提供您完善的服務。
+			(二)您可自由選擇是否提供本會您的個人資料，若您所提供之個人資料不完整時，本團隊可能無法提供您完善的服務。
 			(三)該資料僅在法令許可的範圍之下於服務契約有效期間及經立書人同意之期間，以電子檔或紙本形式存於本會，提供予本會及因以上目的作業需要之第三方處理及使用。
 			(四)本團隊依個人資料保護法第8 條第2 項規定，有下列情事者在蒐集及使用您的個人
 			資料時，得免為告知。
@@ -74,7 +74,9 @@
 				<!-- image enctype -->
 				<form method="POST" action="{% url 'facewall_add' %}" enctype="multipart/form-data">
 					{% csrf_token %}
-					{{ form|crispy }}
+					{% crispy onlineform %}
+					<!-- 上面的方式會對客製化表單生效，下面則是使用預設bootstrap-->
+					<!-- {{ onlineform|crispy }} -->
 					<input class="btn btn-success signup_btn" type="submit" value="投稿完成"/>
 				</form> 
 			</div>

@@ -23,6 +23,6 @@ def add(request):
 			return render(request, 'facewall/result.html', context)
 	context = {
 		'title': '百人百臉投稿',
-		'form': form
+		'onlineform': form
 	}
 	return render(request, 'facewall/add.html', context)

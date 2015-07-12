@@ -2,7 +2,7 @@
 from django import forms
 from .models import OnlineQuestion
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Submit, Layout, Div, MultiField
+from crispy_forms.layout import Layout,Field, Fieldset, Div, MultiField, Submit
 import re
 
 class OnlineQuestionForm(forms.ModelForm):
@@ -43,17 +43,32 @@ class OnlineQuestionForm(forms.ModelForm):
 		super(OnlineQuestionForm,self).__init__(*args, **kwargs)
  		# Set layout for fields.
  		self.helper = FormHelper()
+ 		# 用 FieldSet切群組
  		self.helper.layout = Layout(
- 			'name','nickname',
- 			Div('gender'),
- 			Div(
- 				Div('birth_year',css_class="col-md-2"),
- 				Div('birth_month',css_class="col-md-1"),
- 				Div('birth_day',css_class="col-md-1"),
- 				css_class = 'row'
- 				),
+ 			Fieldset(
+ 				'',
+	        	'name',
+	        	'nickname',
+    		),
+    		'gender',
+    		Fieldset(
+ 				'',
+	        	'birth_year',
+	        	'birth_month',
+	        	'birth_day',
+	        	
+    		),
+    		'contact_email',
+        	'face_image',
+			'content', 
+			'youtube_url', 
+			'topic_num'
 		)
- 		self.helper.add_input(Submit('submit', 'Submit'))
+		# 用index指令layout的區塊
+		# self.helper[0].wrap_together(Fieldset, u'姓名',style="font-weight: bold;")
+		# self.helper[2].wrap_together(Fieldset, u'生日',style="font-weight: bold;font-size:16px;")
+		# 客製化的按鈕
+ 		# self.helper.add_input(Submit('submit', 'Submit'))
 
 
 	def clean_name(self):
