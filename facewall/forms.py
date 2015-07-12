@@ -50,7 +50,7 @@ class OnlineQuestionForm(forms.ModelForm):
 	        	'name',
 	        	'nickname',
     		),
-    		'gender',
+    		Div('gender',),
     		Fieldset(
  				'',
 	        	'birth_year',
