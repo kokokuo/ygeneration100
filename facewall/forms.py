@@ -3,6 +3,7 @@ from django import forms
 from .models import OnlineQuestion
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout,Field, Fieldset, Div, MultiField, Submit
+from crispy_forms.bootstrap import AppendedText
 import re
 
 class OnlineQuestionForm(forms.ModelForm):
@@ -29,7 +30,7 @@ class OnlineQuestionForm(forms.ModelForm):
 			'topic_num': '投稿題目'
 		}
 		widgets = {
-			'gender': forms.RadioSelect,
+			'gender': forms.RadioSelect(attrs={'style':'margin-left:40px;'}),
 			'topic_num': forms.Select(
 				choices=[
 				# 前面是值後面是顯示
@@ -46,27 +47,41 @@ class OnlineQuestionForm(forms.ModelForm):
  		# 用 FieldSet切群組
  		self.helper.layout = Layout(
  			Fieldset(
+ 				# u'基本資料',
  				'',
-	        	'name',
-	        	'nickname',
+ 				Div(
+	        		Div('name',css_class="col-md-4"),
+	        		css_class="row"
+	        	),
+	        	Div(
+	        		Div('nickname',css_class="col-md-4"),
+	        		css_class="row"
+        		),
+        		Div(
+        			Div('contact_email',css_class="col-md-6"),
+        			css_class="row"	
+    			),
     		),
-    		Div('gender',),
+    		Div('gender'),
     		Fieldset(
- 				'',
-	        	'birth_year',
-	        	'birth_month',
-	        	'birth_day',
+    			# u'生日',
+    			'',
+ 				Div(
+	        		Div('birth_year',css_class="col-md-4"),
+	        		Div('birth_month',css_class="col-md-4"),
+	        		Div('birth_day',css_class="col-md-4"),
+	        		css_class="row"
+	        	)
 	        	
     		),
-    		'contact_email',
         	'face_image',
 			'content', 
 			'youtube_url', 
 			'topic_num'
 		)
 		# 用index指令layout的區塊
-		# self.helper[0].wrap_together(Fieldset, u'姓名',style="font-weight: bold;")
-		# self.helper[2].wrap_together(Fieldset, u'生日',style="font-weight: bold;font-size:16px;")
+		self.helper[0].wrap_together(Fieldset, u'基本資料',style="font-weight: bold;")
+		self.helper[3:7].wrap_together(Fieldset, u'投稿資料',style="font-weight: bold;")
 		# 客製化的按鈕
  		# self.helper.add_input(Submit('submit', 'Submit'))
 
