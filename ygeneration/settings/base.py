@@ -99,3 +99,9 @@ MEDIA_URL = '/media/'
 
 # Crispy Form
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+
+# Image Validation Settings
+VALID_IMAGE_FORMATS = ['JPEG', 'PNG', 'BMP']
+VALID_IMAGE_WIDTH = 640
+VALID_IMAGE_HEIGHT = 640

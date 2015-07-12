@@ -75,9 +75,11 @@
 				<form method="POST" action="{% url 'facewall_add' %}" enctype="multipart/form-data">
 					{% csrf_token %}
 					{% crispy onlineform %}
-					<!-- 上面的方式會對客製化表單生效，下面則是使用預設bootstrap-->
+					<!-- 上面的方式會對客製化表單生效，連同送出按鈕也要自己處理，下面則是使用預設bootstrap-->
 					<!-- {{ onlineform|crispy }} -->
+					<!--
 					<input class="btn btn-success signup_btn" type="submit" value="投稿完成"/>
+					-->
 				</form> 
 			</div>
 		</div>

@@ -1,9 +1,16 @@
 # -*- coding: utf-8 -*-
 from django import forms
+
 from .models import OnlineQuestion
+# Crispy form
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout,Field, Fieldset, Div, MultiField, Submit
 from crispy_forms.bootstrap import AppendedText
+# For Image
+from django.conf import settings
+import StringIO
+from PIL import Image
+# Regex
 import re
 
 class OnlineQuestionForm(forms.ModelForm):
@@ -29,6 +36,12 @@ class OnlineQuestionForm(forms.ModelForm):
 			'youtube_url': 'Youtube 影片連結',
 			'topic_num': '投稿題目'
 		}
+		# 設定協助描述的文字
+		help_texts = {
+			'face_image':'請上傳寬 * 高為640 x 640以下的圖檔',
+			'youtube_url':'請記得公開影片, 並提供連結即可, 不需提供分享影片程式碼',
+		}
+
 		widgets = {
 			'gender': forms.RadioSelect(attrs={'style':'margin-left:40px;'}),
 			'topic_num': forms.Select(
@@ -44,7 +57,28 @@ class OnlineQuestionForm(forms.ModelForm):
 		super(OnlineQuestionForm,self).__init__(*args, **kwargs)
  		# Set layout for fields.
  		self.helper = FormHelper()
- 		# 用 FieldSet切群組
+
+ 	# 	# 設定名稱，另一種方式，第三個是描述
+		# online_question_field_text = [
+		# 	# (field_name, Field title label, Detailed field description)
+		# 	('name', '姓名', ''),
+		# 	('nickname', '暱稱', ''),
+		# 	('gender', '性別', ''),
+		# 	('birth_year', '出生年', ''),
+		# 	('birth_month', '出生月', ''),
+		# 	('birth_day', '出生日', ''),
+		# 	('contact_email', '連絡信箱', ''),
+		# 	('content', '介紹', ''),
+		# 	('face_image', '大頭貼', '請上傳300Kb以下的圖檔'),
+		# 	('youtube_url', 'Youtube 影片連結', '請記得公開影片, 並提供連結即可, 不需提供分享影片程式碼'),
+		# 	('topic_num', '投稿題目', '')
+		# ]
+
+		# for x in online_question_field_text:
+		# 	self.fields[x[0]].label=x[1]
+		# 	self.fields[x[0]].help_text=x[2]
+
+ 		# 客製化layout排版 用 FieldSet切群組
  		self.helper.layout = Layout(
  			Fieldset(
  				# u'基本資料',
@@ -79,11 +113,11 @@ class OnlineQuestionForm(forms.ModelForm):
 			'youtube_url', 
 			'topic_num'
 		)
-		# 用index指令layout的區塊
+		# 群組
 		self.helper[0].wrap_together(Fieldset, u'基本資料',style="font-weight: bold;")
 		self.helper[3:7].wrap_together(Fieldset, u'投稿資料',style="font-weight: bold;")
 		# 客製化的按鈕
- 		# self.helper.add_input(Submit('submit', 'Submit'))
+ 		self.helper.add_input(Submit('submit', u'投稿',css_class="btn btn-success signup_btn"))
 
 
 	def clean_name(self):
@@ -91,12 +125,17 @@ class OnlineQuestionForm(forms.ModelForm):
 		# 特別符號，待處理
 		return name
 
-	# def clean_face_image(self):
-	# 	face_image = self.cleaned_data.get('face_image')
-	# 	image_w, image_h = face_image.size
-	# 	if image_w > 300 or image_h > 300:
-	# 		face_image.resize((300, 300), Image.ANTIALIAS)
-	# 	return face_image
+	def clean_face_image(self):
+		face_image = self.cleaned_data.get('face_image')
+		if face_image:
+			face_image_file = StringIO.StringIO(face_image.read())
+			image = Image.open(face_image_file)
+			w, h = image.size
+			if not image.format in settings.VALID_IMAGE_FORMATS:
+				raise forms.ValidationError(u'只有 *.bmp, *.jpg 與 *.png 圖片格式允許上傳')
+			if w > settings.VALID_IMAGE_WIDTH or h > settings.VALID_IMAGE_HEIGHT:
+				raise forms.ValidationError(u'圖片尺寸不符，影像寬超出' + str(settings.VALID_IMAGE_WIDTH) + u'像素,或是高' + str(settings.VALID_IMAGE_HEIGHT) + u'像素.')
+		return face_image
 
 	def clean_youtube_url(self):
 		url = self.cleaned_data.get('youtube_url')
