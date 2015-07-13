@@ -1,2 +1,2 @@
 User-agent: *
-Disallow: /bepci/
+Disallow: /bepci/admin/
