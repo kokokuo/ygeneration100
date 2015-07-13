@@ -2,6 +2,8 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.generic import TemplateView
+
 
 urlpatterns = patterns(
 	'',
@@ -13,6 +15,7 @@ urlpatterns = patterns(
 	url(r'^facewall/signup/$', 'facewall.views.add', name="facewall_add"),
 	# url(r'^fastquestion/index/$', 'fastquestion.views.index'),
 	url(r'^bepci/admin/', include(admin.site.urls)),
+	url(r'^robots\.txt/$', TemplateView.as_view(template_name='robots.txt', content_type='text/plain')),
 )
 
 # Custion 404 views and page
