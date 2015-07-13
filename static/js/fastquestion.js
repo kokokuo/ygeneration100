@@ -23,6 +23,7 @@ $(window).load(function () {
 
 $(document).ready(function(){
 	// Nested ===============
+	var imgs = $('.grid img').attr('src');
 	// var width_type = ['size52','size43']
 	// var height_type = ['size35','size24']
 	// var same_type = ['size33','size22','size44']

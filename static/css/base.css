@@ -98,6 +98,14 @@ a:hover{
 	color: #FFF;
 }
 
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+/* 文案區塊標題 */
+.article_title {
+	font-size: 20px;
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+
 /*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
 /* 區塊內容 */
 .section_content {
@@ -115,8 +123,14 @@ a:hover{
 	margin-right: auto;
 	margin-left: auto;
 }
+.content_left h3 {
+	text-align: left;
+}
 .content_left p {
 	text-align: left;
+}
+.content_center h3 {
+	text-align: center;
 }
 .content_center p {
 	text-align: center;
@@ -390,8 +404,4 @@ a:hover{
     left: 0;
     width: 100%;
     height: 100%;
-}
-
-#main_video {
-	
 }
