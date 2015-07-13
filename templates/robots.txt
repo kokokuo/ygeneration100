@@ -1,2 +1,3 @@
 User-agent: *
 Disallow: /bepci/admin/
+Disallow: /media/
