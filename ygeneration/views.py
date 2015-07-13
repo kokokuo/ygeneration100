@@ -1,16 +1,22 @@
+# -*- coding: utf-8 -*-
 from django.shortcuts import render
 from django.shortcuts import render_to_response
 from django.template import RequestContext
+# finder real static path
+from django.contrib.staticfiles import finders
+# file search
+from os import listdir
+from random import shuffle
 
 # Create your views here.
 def home(request):
-	# activity images
-	fast_ques_photo = []
-	for num in range(1, 7):
-		fast_ques_photo.append('images/face_question/photo' + str(num) + '.JPG')
-
+	real_static_path = finders.find('images/fast_question/')
+	files = [f for f in listdir(real_static_path)]
+	static_files = ['images/fast_question/' + f for f in files]
+	# 亂數排序
+	shuffle(static_files)
 	context = {
-		'fast_ques_photo': fast_ques_photo,
+		'fast_ques_photo': static_files,
 	}
 	return render(request, 'home.html', context)
 

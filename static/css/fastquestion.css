@@ -36,6 +36,8 @@
 				}
 */
 
+/* ====================================================== */
+/* Nested */
 .box { 	background-color:#ff4499;
 				-moz-border-radius:3px;
   		  -khtml-border-radius: 3px;
@@ -73,3 +75,12 @@ a.btn {
   width: 75px;
   color: red;
 }
+/* ====================================================== */
+/* masonry */
+
+.grid img {
+	opacity:0.7;
+}
+
+.grid-sizer,
+.grid-item { width: 20%; }

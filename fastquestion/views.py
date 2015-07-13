@@ -5,7 +5,7 @@ from django.shortcuts import render
 def index(request):
 	fast_ques_faces = []
 	for num in range(1, 6):
-		fast_ques_faces.append('images/face_question/face' + str(num) + '.png')
+		fast_ques_faces.append('images/fast_question/face' + str(num) + '.png')
 	context = {
 		'fast_ques_faces': fast_ques_faces,
 		'questions_video': [

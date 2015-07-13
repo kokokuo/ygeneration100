@@ -2,6 +2,22 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
+
+{% block resourcefiles %}
+<!-- slick carousel -->
+<link rel="stylesheet" type="text/css" href="{% static "slick/slick-theme.css" %}"/>
+<link rel="stylesheet" type="text/css" href="{% static "slick/slick.css" %}"/>
+<script type="text/javascript" src="{% static "slick/slick.min.js" %}"></script>
+
+<script type="text/javascript" src="{% static "Nested/jquery.nested.js" %}"></script>
+<script type="text/javascript" src="{% static "Nested/makeboxes.js" %}"></script>
+
+<script type="text/javascript" src="{% static "masonry/masonry.pkgd.min.js" %}"></script>
+
+<script type="text/javascript" src="{% static "js/fastquestion.js" %}"></script>
+<link rel="stylesheet" href="{% static "css/fastquestion.css" %}">
+{% endblock %}
+
 {% block banner %}
 		<!-- 封面訊息輪播 -->
 		<section class="slider_section">
@@ -67,25 +83,40 @@
 		</section>
 		<!-- 內容：百人百臉輪播 -->
 		<section>
-			<div class="container section_content content_center">
-			
+			<div class="container-fluid section_content content_center">
+				<div class="row">
 						<p> 
 							已經分享的朋友們
 						</p>
-						<div class="fast_ques_slide_left" dir="rtl">
-							{% for photo in fast_ques_photo %}
+<!--
+ 						<div class="fast_ques_slide_left" dir="rtl">
 								<div>
-									<h3>
+									<h3>-->
 										<!-- <a href="#myModal" data-toggle="modal"> -->
 											<!-- slick -->
-											<img src="{% static photo %}" class="open-popup-link" alt="...">
+											<!--<img src="{% static photo %}" class="open-popup-link" alt="...">
+											-->
 										<!-- </a> -->
-									</h3>
+									<!--</h3>
 								</div>
-							{% endfor %}
-						</div>	
-					
-					
+							{# {% endfor %} #}
+						</div>	 -->
+
+						<div class="grid">
+						<div class="">
+							{% for face in fast_ques_photo %}
+								<img src="{% static face %}" class="open-popup-link grid-item grid-sizer" alt="...">
+							{% endfor %} 
+						</div>
+						</div>
+						<!--<div id="container"> -->
+							{# {% for face in fast_ques_photo %} #}
+										<!-- <a href="#myModal" data-toggle="modal"> -->
+								<!--		<img src="{% static face %}" class="open-popup-link box" alt="..."> -->
+										<!-- </a> -->
+							{# {% endfor %} #}
+						<!-- </div> -->
+					</div>
 			</div>
 		</section>
 		<!-- 標題：活動介紹 -->
