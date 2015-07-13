@@ -11,18 +11,17 @@
 // 	     	'fadeSpeed' : "fast",
 // 	    });
 // });
-
-
-$(document).ready(function(){
-	
-	// ====================
+$(window).load(function () {
+// ====================
 	// jQuery masonry
 	$('.grid').masonry({
 	  columnWidth: '.grid-sizer',
 	  itemSelector: '.grid-item',
 	  percentPosition: true
 	});	
+});
 
+$(document).ready(function(){
 	// Nested ===============
 	// var width_type = ['size52','size43']
 	// var height_type = ['size35','size24']
