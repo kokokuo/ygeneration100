@@ -135,6 +135,7 @@ class OnlineQuestionForm(forms.ModelForm):
 				raise forms.ValidationError(u'只有 *.bmp, *.jpg 與 *.png 圖片格式允許上傳')
 			if w > settings.VALID_IMAGE_WIDTH or h > settings.VALID_IMAGE_HEIGHT:
 				raise forms.ValidationError(u'圖片尺寸不符，影像寬超出' + str(settings.VALID_IMAGE_WIDTH) + u'像素,或是高' + str(settings.VALID_IMAGE_HEIGHT) + u'像素.')
+			#  Rename File
 		return face_image
 
 	def clean_youtube_url(self):
