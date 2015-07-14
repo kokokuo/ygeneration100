@@ -110,6 +110,16 @@ $(document).ready(function(){
 	});
 
 	//=============
-		
+	// 實作滑動滾軸
+	 $(window).scroll(function() {   
+   		if($(window).scrollTop() + $(window).height() > $(document).height()/2 ) {
+       		// 插入點擊滾回最上面的按鈕
+       		//$('.sroll-top-btn').css().fadeTo('fast',0.6);
+		}
+		else{
+
+		}
+	});
 });
+
 

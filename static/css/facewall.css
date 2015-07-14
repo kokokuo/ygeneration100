@@ -58,8 +58,10 @@
 .ques_section_content img{
 	width: 150px;
 	height: 150px;
+	margin-top: 50px;
 	margin-left: 100px;
 }
+
 /* = = = == = = = ================*/
 .agree_report {
 	border: 1px solid #e9e9e9;
