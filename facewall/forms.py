@@ -38,23 +38,25 @@ class OnlineQuestionForm(forms.ModelForm):
 		}
 		# 設定協助描述的文字
 		help_texts = {
-			'face_image':'請上傳寬 * 高為640 x 640以下的圖檔',
-			'youtube_url':'請記得公開影片, 並提供連結即可, 不需提供分享影片程式碼',
+			'face_image': '請上傳寬 * 高為640 x 640以下的圖檔',
+			'youtube_url': '請記得公開影片, 並提供連結即可, 不需提供分享影片程式碼',
 		}
 
 		widgets = {
-			'gender': forms.RadioSelect(attrs={'style':'margin-left:40px;'}),
+			'gender': forms.RadioSelect(attrs={'style': 'margin-left:40px;'}),
 			'topic_num': forms.Select(
 				choices=[
-				# 前面是值後面是顯示
-				('Ques1', '如果外國人來台灣，會帶他去哪邊玩？'),
-				('Ques2', '在機場發生的奇聞軼事或有趣/麻煩事件'),
-				('Ques3','在機場都消費什麼？'), ('Ques4','最喜歡的異國文化？'), ('Ques5','對你來說什麼是小確幸')]
+					# 前面是值後面是顯示
+					('Ques1', 'Q1:你最喜歡的國家是哪個國家呢? 如果有機會可以待在國外生活，你會選擇待在國外還是留在台灣? 為什麼?'),
+					('Ques2', 'Q2:假設你的外國朋友來台灣，你會想帶他去哪裡玩?有沒有一件事是一定要在那邊做的?為什麼?'),
+					('Ques3', 'Q3:現今大家都說台灣人喜愛小確幸，那你會怎麼定義小確幸這個詞，如果你覺得小確幸是一件好事，那小確幸對生活帶來什麼助益? 如果你覺得小確幸不好，原因又是什麼?'), 
+					('Ques4', 'Q4:每個人或多或少都有過出國的經驗，而出國及歸國時我們都會踏入機場，有沒有什麼經驗是讓你覺得出國前和歸國後的心態有明顯轉變的? 為什麼?')
+				]
 			),
 		}
 
 	def __init__(self, *args, **kwargs):
-		super(OnlineQuestionForm,self).__init__(*args, **kwargs)
+		super(OnlineQuestionForm, self).__init__(*args, **kwargs)
  		# Set layout for fields.
  		self.helper = FormHelper()
 
