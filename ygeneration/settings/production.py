@@ -2,8 +2,8 @@ import dj_database_url
 from django.conf import settings
 
 # Set delpoy
-DEBUG = False
-TEMPLATE_DEBUG = False
+DEBUG = True
+TEMPLATE_DEBUG = True
 
 # Get Database object
 DATABASES = settings.DATABASES
