@@ -109,6 +109,7 @@ VALID_IMAGE_HEIGHT = 640
 # Email
 
 # For gmail or google apps
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # TLS Port
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
