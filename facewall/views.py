@@ -31,7 +31,7 @@ def add(request):
 			submit_youtube = online_ques_model.youtube_url
 			submit_topic = online_ques_model.topic_num
 
-			mail_topic = u'新投稿人' + submit_name
+			mail_topic = u'百人百臉，新投稿資料，投稿人:' + submit_name
 
 			messgae = u'姓名:' + submit_name + '\n' + \
 				u'性別:' + submit_gender + '\n' + \
@@ -43,6 +43,8 @@ def add(request):
 
 			to_list = [
 				'bepci2015@gmail.com',
+				'john01311@gmail.com',
+				'l502227ina@gmail.com'
 			]
 			# Send Email STMP
 			send_mail(
