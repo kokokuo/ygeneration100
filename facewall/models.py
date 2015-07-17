@@ -9,7 +9,7 @@ from django.db import models
 class OnlineQuestion(models.Model):
 
 	name = models.CharField(max_length=20, blank=False, null=False)
-	nickname = models.CharField(max_length=20, blank=False, null=False)
+	nickname = models.CharField(max_length=20, blank=True, null=True)
 
 	# 如果要連結到Radio, 指定布林值對應的選擇，如果預設是不選，則設定default = None
 	gender = models.BooleanField(

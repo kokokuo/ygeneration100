@@ -27,6 +27,7 @@ def add(request):
 				'/' + str(online_ques_model.birth_month) + \
 				'/' + str(online_ques_model.birth_day)
 			submit_email = online_ques_model.contact_email
+			submit_intro = online_ques_model.content
 			submit_face_image = online_ques_model.face_image.url
 			submit_youtube = online_ques_model.youtube_url
 			submit_topic = online_ques_model.topic_num
@@ -39,12 +40,11 @@ def add(request):
 				u'信箱:' + submit_email + '\n' + \
 				u'大頭照:' + submit_face_image + '\n' + \
 				u'Youtube連結:' + submit_youtube + '\n' + \
-				u'選擇題目:' + submit_topic
+				u'選擇題目:' + submit_topic + '\n' + \
+				u'內容介紹:' + submit_intro
 
 			to_list = [
 				'bepci2015@gmail.com',
-				'john01311@gmail.com',
-				'l502227ina@gmail.com'
 			]
 			# Send Email STMP
 			send_mail(

@@ -31,7 +31,7 @@ class OnlineQuestionForm(forms.ModelForm):
 			'birth_month': '出生月',
 			'birth_day': '出生日',
 			'contact_email': '連絡信箱',
-			'content': '介紹',
+			'content': '內容介紹',
 			'face_image': '大頭貼',
 			'youtube_url': 'Youtube 影片連結',
 			'topic_num': '投稿題目'
@@ -60,7 +60,7 @@ class OnlineQuestionForm(forms.ModelForm):
  		# Set layout for fields.
  		self.helper = FormHelper()
 
- 	# 	# 設定名稱，另一種方式，第三個是描述
+ 		# 	# 設定名稱，另一種方式，第三個是描述
 		# online_question_field_text = [
 		# 	# (field_name, Field title label, Detailed field description)
 		# 	('name', '姓名', ''),
@@ -86,16 +86,16 @@ class OnlineQuestionForm(forms.ModelForm):
  				# u'基本資料',
  				'',
  				Div(
-	        		Div('name',css_class="col-md-4"),
+	        		Div('name', css_class="col-md-4"),
 	        		css_class="row"
 	        	),
 	        	Div(
-	        		Div('nickname',css_class="col-md-4"),
+	        		Div('nickname', css_class="col-md-4"),
 	        		css_class="row"
         		),
         		Div(
-        			Div('contact_email',css_class="col-md-6"),
-        			css_class="row"	
+        			Div('contact_email', css_class="col-md-6"),
+        			css_class="row"
     			),
     		),
     		Div('gender'),
@@ -103,24 +103,23 @@ class OnlineQuestionForm(forms.ModelForm):
     			# u'生日',
     			'',
  				Div(
-	        		Div('birth_year',css_class="col-md-4"),
-	        		Div('birth_month',css_class="col-md-4"),
-	        		Div('birth_day',css_class="col-md-4"),
+	        		Div('birth_year', css_class="col-md-4"),
+	        		Div('birth_month', css_class="col-md-4"),
+	        		Div('birth_day', css_class="col-md-4"),
 	        		css_class="row"
 	        	)
 	        	
     		),
         	'face_image',
-			'content', 
-			'youtube_url', 
+			'content',
+			'youtube_url',
 			'topic_num'
 		)
 		# 群組
-		self.helper[0].wrap_together(Fieldset, u'基本資料',style="font-weight: bold;")
-		self.helper[3:7].wrap_together(Fieldset, u'投稿資料',style="font-weight: bold;")
+		self.helper[0].wrap_together(Fieldset, u'基本資料', style="font-weight: bold;")
+		self.helper[3:7].wrap_together(Fieldset, u'投稿資料', style="font-weight: bold;")
 		# 客製化的按鈕
- 		self.helper.add_input(Submit('submit', u'投稿',css_class="btn btn-success signup_btn"))
-
+		self.helper.add_input(Submit('submit', u'投稿', css_class="btn btn-success signup_btn"))
 
 	def clean_name(self):
 		name = self.cleaned_data.get('name')
