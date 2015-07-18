@@ -3,10 +3,6 @@
 {% load staticfiles %}
 
 {% block resourcefiles %}
-<!-- photo wall -->
-
-<script type="text/javascript" src="{% static "js/fastquestion.js" %}"></script>
-<link rel="stylesheet" href="{% static "css/fastquestion.css" %}">
 
 <!--
 <link rel="stylesheet" href="{% static "css/transitions.css" %}">
@@ -16,6 +12,11 @@
 -->
 <script type="text/javascript" src="{% static "Nested/jquery.nested.js" %}"></script>
 <script type="text/javascript" src="{% static "Nested/makeboxes.js" %}"></script>
+
+<script type="text/javascript" src="{% static "masonry/masonry.pkgd.min.js" %}"></script>
+
+<script type="text/javascript" src="{% static "js/fastquestion.js" %}"></script>
+<link rel="stylesheet" href="{% static "css/fastquestion.css" %}">
 <!-- Free wall -->
 <!-- <script type="text/javascript" src="{% static "freewall/freewall.js" %}"></script> -->
 {% endblock %}
@@ -34,11 +35,16 @@
 	</section>
 	<!-- 內容：活動介紹-->
 	<section>
-		<div id="container" >
-			{% for face in fast_ques_faces %}
-						<!-- <a href="#myModal" data-toggle="modal"> -->
-						<img src="{% static face %}" class="open-popup-link box" alt="...">
-			{% endfor %}
+		<div id="container-fluid" >
+			<div class="row">
+				<div class="grid">
+                        <div class="">
+                            {% for online_data in online_ques_list %}
+                                <img src="{% static online_data.face_image.url %}" class="open-popup-link grid-item grid-sizer" alt="...">
+                            {% endfor %} 
+                        </div>
+                </div>
+			</div>
 		</div>
 	
 	  

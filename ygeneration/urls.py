@@ -13,7 +13,7 @@ urlpatterns = patterns(
 	url(r'^team_intro/$', 'ygeneration.views.team_intro', name="team_intro"),
 	url(r'^facewall/index/$', 'facewall.views.index', name="facewall_index"),
 	url(r'^facewall/signup/$', 'facewall.views.add', name="facewall_add"),
-	# url(r'^fastquestion/index/$', 'fastquestion.views.index'),
+	url(r'^fastquestion/index/$', 'fastquestion.views.index', name="fastquestion_wall"),
 	url(r'^bepci/admin/', include(admin.site.urls)),
 	url(r'^robots\.txt/$', TemplateView.as_view(template_name='robots.txt', content_type='text/plain')),
 )
