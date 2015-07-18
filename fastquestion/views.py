@@ -27,7 +27,7 @@ def index(request):
 	# shuffle(static_files)
 
 	context = {
-		'fast_ques_list': fast_ques_list,
+		'fast_ques_list': fast_ques_list[:20],
 		'online_ques_list': online_ques_list
 	}
 	return render(request, 'fastquestion/index.html', context)
