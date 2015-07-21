@@ -153,29 +153,4 @@ a.btn {
 /* ==================================================== */
 /* RWD 當手機模式時，調整Marsony sizer的尺寸 */
 /* 動態調整RWD，語法要放在最下面，才不會被覆蓋 */
-@media only screen and (max-width: 480px) {
-  /* 5 columns for larger screens */
-  	/*.grid-sizer { width: 20%; }*/
-  	.grid-item { width: 20%; }
-
-  	.facewall_title h3{
-		font-size: 24px;
-		text-align: center;
-		color: #FFF;
-		font-weight: bold;
-		/* 陰影，使文字可以呈現 */
-		text-shadow: 1px 1px 2px rgba(150, 150, 150, 1);
-	}
-  	/* 瀑布流 */
-  	.grid-item-water {
-		width: 45%;
-		margin: 5px;
-		padding: 10px;
-		border: 1px solid #e0e0e0;
-	 	border-radius: 2px;
-	}
-	.grid-item-water img {
-		width: 100%;
-	}
-}
 
