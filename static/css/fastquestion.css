@@ -22,59 +22,6 @@
 	font-size: 16px;
 }
 
-.Collage img {
-	margin: 0; 
-}
-
-/*body {	background-color:#e1e1e1;
-				color:#fff;
-				font-family: Arial, sans-serif;
-				font-size:11px;
-				line-height: 14px;
-				padding:0px;
-				margin:0px;	
-				}
-*/
-
-/* ====================================================== */
-/* Nested */
-.box { 	background-color:#ff4499;
-				-moz-border-radius:3px;
-  		  -khtml-border-radius: 3px;
-				-webkit-border-radius:3px;
-				border-radius:3px;
-
- 
--webkit-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
-   -moz-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
-    -ms-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
-     -o-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
-        transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000); /* easeInOutExpo */
-        
-  -webkit-transition-property: left, right, top;
-     -moz-transition-property: left, right, top;
-      -ms-transition-property: left, right, top;
-       -o-transition-property: left, right, top;
-          transition-property: left, right, top;
-                 
-}
-			
-#container { 
-	overflow: hidden;
-}`
-
-.size21, .size22, .size23, .twocols { background: #ccc }
-.size31, .size32, .size33, .threecols { background: #ff9999 }
-
-a.btn {
-  margin-right: 1px;
-  line-height: 30px;
-  height: 30px;
-  cursor: pointer;
-  display: inline-block;
-  width: 75px;
-  color: red;
-}
 /* ====================================================== */
 /* masonry */
 
@@ -153,4 +100,29 @@ a.btn {
 /* ==================================================== */
 /* RWD 當手機模式時，調整Marsony sizer的尺寸 */
 /* 動態調整RWD，語法要放在最下面，才不會被覆蓋 */
+@media only screen and (max-width: 480px) {
+  /* 5 columns for larger screens */
+  	/*.grid-sizer { width: 20%; }*/
+  	.grid-item { width: 20%; }
+
+  	.facewall_title h3{
+		font-size: 24px;
+		text-align: center;
+		color: #FFF;
+		font-weight: bold;
+		/* 陰影，使文字可以呈現 */
+		text-shadow: 1px 1px 2px rgba(150, 150, 150, 1);
+	}
+  	/* 瀑布流 */
+  	.grid-item-water {
+		width: 45%;
+		margin: 5px;
+		padding: 10px;
+		border: 1px solid #e0e0e0;
+	 	border-radius: 2px;
+	}
+	.grid-item-water img {
+		width: 100%;
+	}
+}
 
