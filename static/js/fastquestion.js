@@ -1,17 +1,4 @@
 
-
-// Collage
-// $(window).load(function () {
-//     $('.Collage').collagePlus({
-// 	        // change this to adjust the height of the rows
-// 	        'targetHeight' : 100,
-// 	        // change this to try different effects
-// 	        // valid effets = effect-1 to effect-6
-// 	        'effect' : "effect-6",
-// 	     	'fadeSpeed' : "fast",
-// 	    });
-// });
-
 $(window).load(function () {
 // ====================
 	 // jQuery masonry
@@ -131,6 +118,15 @@ $(document).ready(function(){
 });
 
 
-function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min)) + min;
-}
+
+// Collage
+// $(window).load(function () {
+//     $('.Collage').collagePlus({
+// 	        // change this to adjust the height of the rows
+// 	        'targetHeight' : 100,
+// 	        // change this to try different effects
+// 	        // valid effets = effect-1 to effect-6
+// 	        'effect' : "effect-6",
+// 	     	'fadeSpeed' : "fast",
+// 	    });
+// });
