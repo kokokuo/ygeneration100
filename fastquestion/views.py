@@ -44,7 +44,7 @@ def get_face_video(request):
 		select_m = OnlineQuestion.objects.get(pk=face_id)
 
 		# youtube link handle
-		match_pattern = 'v=[a-zA-Z0-9]+&*'
+		match_pattern = 'v=[a-zA-Z0-9_]]+&*'
 		url = select_m.youtube_url
 		matched = re.search(match_pattern, url)
 		# Get Matched data
