@@ -57,7 +57,7 @@ def get_face_video(request):
 		# name and nickname
 		title = None
 		content = None
-		if not select_m.nickname:
+		if select_m.nickname:
 			title = select_m.nickname
 		else:
 			title = select_m.name
