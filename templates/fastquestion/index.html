@@ -88,12 +88,13 @@
 	                			<!-- Modal 影片 -->
 	                			<a data-toggle="modal" data-target="#face_modal" id="face_video_{{online_data.pk}}">
 	                        		<img src="{% static online_data.face_image.url %}" class="open-popup-link" >
-	                        		<!-- <p>
-	                        			{# {% if online_data.content %} #}
-	                        				{# {{ online_data.content }} #}
-	                        			{# {% endif %} #}
+	                        		
+	                        		<p>
+	                        			{% if online_data.content %}
+	                        				{{ online_data.content }}
+	                        			{% endif %}
 	                        		</p>
-	                        		 -->
+	                        		
 	                        		<!-- facebook like ? -->
 	                    		</a>
 	                   		</div>	                           		

@@ -45,14 +45,13 @@ $(window).load(function () {
 			        content = '<div class="videowrapper">' +
 			                    	'<iframe width="100%" height="390px" src="https://www.youtube.com/embed/' + video_serial + '" frameborder="0" allowfullscreen></iframe>'
 			                    	+
-			                	'</div>' +
-			                	'<p>' + data.content + '</p>';
+			                	'</div>';
 			        if(modalBody.find('.videowrapper')){
 			        	$('.videowrapper').remove();	
 			        }
-			        if(modalBody.find('p')){
-			        	$('p').remove();	
-			        }
+			        // if(modalBody.find('p')){
+			        // 	$('p').remove();	
+			        // }
 			        modalBody.append(content);
         		}
     		);
