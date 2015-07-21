@@ -4,7 +4,6 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic import TemplateView
 
-
 urlpatterns = patterns(
 	'',
 	url(r'^$', 'ygeneration.views.home', name='home'),
@@ -14,6 +13,7 @@ urlpatterns = patterns(
 	url(r'^facewall/index/$', 'facewall.views.index', name="facewall_index"),
 	url(r'^facewall/signup/$', 'facewall.views.add', name="facewall_add"),
 	url(r'^fastquestion/index/$', 'fastquestion.views.index', name="fastquestion_wall"),
+	url(r'^fastquestion/video/$', 'fastquestion.views.get_face_video'),
 	url(r'^bepci/admin/', include(admin.site.urls)),
 	url(r'^robots\.txt/$', TemplateView.as_view(template_name='robots.txt', content_type='text/plain')),
 )

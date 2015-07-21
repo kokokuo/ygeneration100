@@ -260,12 +260,26 @@ a:hover{
 /* 圖文模式 - 文字在圖片上面 */
 .modal-body p {
 	position: absolute;
-	top: 200px;
-	font-size: 24px;
+	top: 400px;
+	font-size: 18px;
 	color: #FFF;
 	/* 調整文字的內空間往內縮 */
 	padding: 50px; 
 }
+
+.modal-body p {
+	position: absolute;
+	top: 380px;
+	font-size: 18px;
+	color: #FFF;
+	/* 調整文字的內空間往內縮 */
+	padding-top: 50px;
+	line-height: 25px;
+	padding-bottom: 25px;
+	padding-left: 20px;
+	padding-right: 20px; 
+}
+
 .modal-body img {
     width: 100%; /* 使 modal中的圖片大小與預設的Modal 大小一致 */
     /* 模糊 blur 效果 像素越大越模糊 */

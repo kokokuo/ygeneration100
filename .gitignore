@@ -3,6 +3,7 @@
 staticfiles
 db.sqlite3
 ygeneration/settings/local.py
+.DS_Store
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
