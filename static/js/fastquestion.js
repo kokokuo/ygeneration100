@@ -42,6 +42,7 @@ $(window).load(function () {
 			        modalTitle = faceVideoModal.find('.modal-title')
 			        modalTitle.text(data.title)
 			        // load content into modal
+			        // ?enablejsapi=1 for enable Js Youtube api ,then can close  or pause
 			        content = '<div class="videowrapper">' +
 			                    	'<iframe width="100%" height="390px" src="https://www.youtube.com/embed/' + video_serial + '" frameborder="0" allowfullscreen></iframe>'
 			                    	+
