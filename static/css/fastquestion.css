@@ -97,6 +97,22 @@
 	color: #000;
 }
 
+/* 移動至Div區塊實作縮放 */
+.facewall_content:hover {
+	 -webkit-transform:scale(1.1); /* Safari and Chrome */
+    -moz-transform:scale(1.1); /* Firefox */
+    -ms-transform:scale(1.1); /* IE 9 */
+    -o-transform:scale(1.1); /* Opera */
+     transform:scale(1.1);
+}
+
+.facewall_content {
+	 -webkit-transition: all 0.5s ease; /* Safari and Chrome */
+    -moz-transition: all 0.5s ease; /* Firefox */
+    -ms-transition: all 0.5s ease; /* IE 9 */
+    -o-transition: all 0.5s ease; /* Opera */
+    transition: all 0.5s ease;
+}
 /* ==================================================== */
 /* RWD 當手機模式時，調整Marsony sizer的尺寸 */
 /* 動態調整RWD，語法要放在最下面，才不會被覆蓋 */
@@ -125,4 +141,5 @@
 		width: 100%;
 	}
 }
+
 

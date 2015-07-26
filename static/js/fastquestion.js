@@ -44,7 +44,7 @@ $(window).load(function () {
 			        // load content into modal
 			        // ?enablejsapi=1 for enable Js Youtube api ,then can close  or pause
 			        content = '<div class="videowrapper">' +
-			                    	'<iframe width="100%" height="390px" src="https://www.youtube.com/embed/' + video_serial + '" frameborder="0" allowfullscreen></iframe>'
+			                    	'<iframe width="100%" height="390px" src="https://www.youtube.com/embed/' + video_serial + '?enablejsapi=1" frameborder="0" allowfullscreen></iframe>'
 			                    	+
 			                	'</div>';
 			        if(modalBody.find('.videowrapper')){
@@ -61,10 +61,19 @@ $(window).load(function () {
 	        // faceVideoModal.modal('show');
 	});
 	
-});
+	// detect when modal close (hidden)
+	$('#face_modal').on('hidden.bs.modal', function () {
+  		// do something…
+		 var faceVideoModal = $('#face_modal');
+	    modalBody = faceVideoModal.find('.modal-body');
 
-$(document).ready(function(){
+	    if(modalBody.find('.videowrapper')){
+	    	$('.videowrapper > iframe').get(0).contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');  
+	    	
+		}
+	});
 
+	
 });
 
 
