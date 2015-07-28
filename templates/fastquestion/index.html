@@ -15,10 +15,10 @@
 
 
 
-<!-- <script type="text/javascript" src="{% static "masonry/imagesloaded.pkgd.js" %}"></script> -->
+<script type="text/javascript" src="{% static "js/imagesloaded.pkgd.js" %}"></script> 
 <script type="text/javascript" src="{% static "masonry/masonry.pkgd.min.js" %}"></script>
 
-
+<script type="text/javascript" src="{% static "infinite-scroll/jquery.infinitescroll.js" %}"></script>
 
 <link rel="stylesheet" href="{% static "css/fastquestion.css" %}">
 <script type="text/javascript" src="{% static "js/fastquestion.js" %}"></script>
@@ -105,6 +105,9 @@
 	                	{% endfor %} 
                 	</div>
 	        	</div>
+	        	<nav class="pagination">
+  					<a class="next" href="/page/2">Next</a>
+				</nav>
 		</div>
 	</section>
 
