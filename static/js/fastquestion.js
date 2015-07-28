@@ -9,13 +9,13 @@ $(window).load(function () {
 	  percentPosition: true,
 	});	
 
-	$('#grid-water').masonry({
-			columnWidth: '.grid-sizer-water',
-			itemSelector: '.grid-item-water',
-			percentPosition: true,
-			singleMode:true,
-			animate:true
-	});
+	// $('#grid-water').masonry({
+	// 		columnWidth: '.grid-sizer-water',
+	// 		itemSelector: '.grid-item-water',
+	// 		percentPosition: true,
+	// 		singleMode:true,
+	// 		animate:true
+	// });
 
 	// Modal ： Show Face
 	// need loaded images then can work
@@ -78,7 +78,7 @@ $(window).load(function () {
 
 $(function(){
 
-$('#grid-water').imagesLoaded( function() {
+	$('#grid-water').imagesLoaded( function() {
 	console.log('all images are loaded');
 	$('#grid-water').masonry({
 		columnWidth: '.grid-sizer-water',
@@ -109,7 +109,7 @@ $('#grid-water').imagesLoaded( function() {
 
 	});
 
-   });
+});
 // $('#grid').imagesLoaded( function() {
 // 	 // jQuery masonry
 // 	$('#grid').masonry({
