@@ -76,16 +76,16 @@ $(window).load(function () {
 });
 
 
-	$('#grid-water').imagesLoaded().done(function(){
+	$('#grid-water').imagesLoaded(function(){
 		console.log('all images are loaded');
 		$('#grid-water').masonry({
 			columnWidth: '.grid-sizer-water',
 			itemSelector: '.grid-item-water',
 			percentPosition: true,
 		});
-	});
 
-	$('#grid-water').infinitescroll({
+
+		$('#grid-water').infinitescroll({
 
 		nextSelector: '.pagination a.next',
 		navSelector: '.pagination',
@@ -106,7 +106,10 @@ $(window).load(function () {
 					$('#grid-water').masonry( 'appended', $newElems, true );
 			});
 
+		});
 	});
+
+	
 
 
 // $('#grid').imagesLoaded( function() {
