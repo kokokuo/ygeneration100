@@ -76,7 +76,7 @@ $(window).load(function () {
 });
 
 
-	$('#grid-water').imagesLoaded( function() {
+	$('#grid-water').imagesLoaded().done(function(){
 		console.log('all images are loaded');
 		$('#grid-water').masonry({
 			columnWidth: '.grid-sizer-water',
