@@ -76,8 +76,6 @@ $(window).load(function () {
 });
 
 
-$(function(){
-
 	$('#grid-water').imagesLoaded( function() {
 		console.log('all images are loaded');
 		$('#grid-water').masonry({
@@ -86,7 +84,7 @@ $(function(){
 			percentPosition: true,
 		});
 	});
-	
+
 	$('#grid-water').infinitescroll({
 
 		nextSelector: '.pagination a.next',
@@ -110,7 +108,7 @@ $(function(){
 
 	});
 
-});
+
 // $('#grid').imagesLoaded( function() {
 // 	 // jQuery masonry
 // 	$('#grid').masonry({
