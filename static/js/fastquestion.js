@@ -79,13 +79,14 @@ $(window).load(function () {
 $(function(){
 
 	$('#grid-water').imagesLoaded( function() {
-	console.log('all images are loaded');
-	$('#grid-water').masonry({
-		columnWidth: '.grid-sizer-water',
-		itemSelector: '.grid-item-water',
-		percentPosition: true,
+		console.log('all images are loaded');
+		$('#grid-water').masonry({
+			columnWidth: '.grid-sizer-water',
+			itemSelector: '.grid-item-water',
+			percentPosition: true,
+		});
 	});
-
+	
 	$('#grid-water').infinitescroll({
 
 		nextSelector: '.pagination a.next',
