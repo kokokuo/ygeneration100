@@ -19,8 +19,8 @@ class OnlineQuestionForm(forms.ModelForm):
 		# Show field on th form
 		fields = [
 			'name', 'nickname', 'gender',
-			'birth_year','birth_month','birth_day',
-			'contact_email','face_image',
+			'birth_year', 'birth_month', 'birth_day',
+			'contact_email', 'face_image',
 			'content', 'youtube_url', 'topic_num']
 
 		labels = {

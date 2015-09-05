@@ -19,6 +19,10 @@
 <script type="text/javascript" src="{% static "masonry/masonry.pkgd.min.js" %}"></script>
 
 <script type="text/javascript" src="{% static "infinite-scroll/jquery.infinitescroll.js" %}"></script>
+<!-- Ajax infinite scroll -->
+<!--
+<script type="text/javascript" src="{% static "js/jquery-ias.min.js" %}"></script>
+-->
 
 <link rel="stylesheet" href="{% static "css/fastquestion.css" %}">
 <script type="text/javascript" src="{% static "js/fastquestion.js" %}"></script>
@@ -106,7 +110,7 @@
                 	</div>
 	        	</div>
 	        	<nav class="pagination">
-  					<a class="next" href="/page/2">Next</a>
+  					<a class="next" href="/page/{{page_id}}/"></a>
 				</nav>
 		</div>
 	</section>
