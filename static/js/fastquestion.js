@@ -73,30 +73,7 @@
 
 // });
 
-
-$('#grid-water').infinitescroll({
-
-	nextSelector: '.pagination a.next',
-	navSelector: '.pagination',
-	itemSelector: '.grid-item-water',
-	loading: {
-			finishedMsg: 'No more pages to load.'
-			}
-		},
-
-		// Trigger Masonry as a callback
-		function( newElements ) {
-			// hide new items while they are loading
-			var $newElems = $( newElements ).css({ opacity: 0 });
-			// ensure that images load before adding to masonry layout
-			$newElems.imagesLoaded(function(){
-				// show elems now they're ready
-				$newElems.animate({ opacity: 1 });
-				$('#grid-water').masonry( 'appended', $newElems, true );
-		});
-
-});
-
+(function() {
 
 	$('#grid').imagesLoaded( function() {
 		 // jQuery masonry
@@ -175,35 +152,66 @@ $('#grid-water').infinitescroll({
 	});
 
 
+ var ias = $.ias({
+	container : '#grid-water',      // 写入容器的元素 pic-flow 外面的div
+	item: ".grid-item-water",        // 要加载数据的元素标识 下一页里面提取 
+	pagination: '.pagination',    // 分页信息的容器元素标识  即：首页，上一页，下一页，尾页等 
+	next: '.next',         // 下一页的元素标识，用来获取下一页的URL元素
 
-	 var ias = $.ias({
-		container: "#grid-water'",
-		item: ".grid-item-water",
-		pagination: ".pagination",
-		next: ".next",
-		delay: 1200,
+	loader: '载入更多...',      // 数据进行提取加载的时候显示 可以自定义图片
+	trigger: '查看更多',      // 加载次数完成后 出现的提示    
+	history : false,        // 布尔值 在URL ture 会在 URL 补全 #/page/3
+	onLoadItems: function(items) {
+		console.log('run render');
+        var newElems = $(items).show().css({ opacity: 0 });
+        newElems.imagesLoaded(function(){
+			newElems.animate({ opacity: 1 });
+			$('#grid-water').masonry( 'appended', newElems, true );   // 把请求的结果给 masonry 执行瀑布流 
+    	});
+  	  	return true;
+  	}
+});
+//  $('#grid-water').infinitescroll(
+//  	{
 
-		onLoadItems: function(items) {
-			console.log('run masonry');
-	        var newElems = $(items).css({ opacity: 0 });
-	        newElems.imagesLoaded(function(){
-	          newElems.animate({ opacity: 1 });
-	          $('#grid-water').masonry( 'appended', newElems, true );   
-	        });
-	        return true;
-		}
+// 		// selector for the paged navigation (it will be hidden)
+// 		navSelector  : ".pagination",
+// 		// selector for the NEXT link (to page 2)
+// 		nextSelector : ".pagination a",
+// 		// selector for all items you'll retrieve
+// 		itemSelector : ".grid-item-water",
+
+// 		// finished message
+// 		loading: {
+// 			finishedMsg: 'No more pages to load.'
+// 		}
+// 	},
+
+// 	// Trigger Masonry as a callback
+// 	function( newElements ) {
+// 		console.log('run render');
+// 		// hide new items while they are loading
+// 		var $newElems = $( newElements ).css({ opacity: 0 });
+// 		// ensure that images load before adding to masonry layout
+// 		$newElems.imagesLoaded(function(){
+// 			// show elems now they're ready
+// 			$newElems.animate({ opacity: 1 });
+// 			$('#grid-water').masonry( 'appended', $newElems, true );
+// 		});
+// 	}
+// );
+
+	ias.on('render', function(items) {
+		console.log('run render');
+		$(items).css({ opacity: 0 });
 	});
-ias.on('render', function(items) {
-	console.log('run render');
-	$(items).css({ opacity: 0 });
-});
 
-ias.on('rendered', function(items) {
-	console.log('run rendered');
- 	$('#grid-water').appended(items);
-});
+	ias.on('rendered', function(items) {
+		console.log('run rendered');
+	 	$('#grid-water').appended(items);
+	});
 
 	ias.extension(new IASSpinnerExtension());
 	ias.extension(new IASNoneLeftExtension({html: '<div class="ias-noneleft" style="text-align:center"><p><em>You reached the end!</em></p></div>'}));
-
+})();
 

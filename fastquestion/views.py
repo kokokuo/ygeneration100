@@ -63,6 +63,7 @@ def get_face_video(request):
 
 # 待修改
 def get_page(request, page_id):
+
 	# 取得投稿的圖片與連結
 	# 把資料放到list , QuerySet無法被更改
 	online_ques_list = list(OnlineQuestion.objects.all())
@@ -75,4 +76,7 @@ def get_page(request, page_id):
 		'online_ques_list': online_ques_list[start_num:last_num],
 		'page_id': int(page_id) + 1
 	}
+	# page_data = online_ques_list[start_num:last_num],
 	return render(request, 'fastquestion/index.html', context)
+	# json_data = json.dumps(page_data)
+	# return HttpResponse(json_data, content_type='application/json')
