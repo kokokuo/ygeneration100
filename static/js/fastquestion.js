@@ -97,6 +97,7 @@ $('#grid-water').infinitescroll({
 
 });
 
+
 $('#grid').imagesLoaded( function() {
 	 // jQuery masonry
 	$('#grid').masonry({
@@ -176,19 +177,20 @@ $('#grid-water').imagesLoaded( function() {
 
 
  var ias = $.ias({
-      container: "#grid-water'",
-      item: ".grid-item-water",
-      pagination: ".pagination",
-      next: ".next",
-      delay: 1200
-});
+	container: "#grid-water'",
+	item: ".grid-item-water",
+	pagination: ".pagination",
+	next: ".next",
+	delay: 1200,
 
-ias.on('render', function(items) {
-  $(items).css({ opacity: 0 });
-});
-
-ias.on('rendered', function(items) {
-  msnry.appended(items);
+	onLoadItems: function(items) {
+        var newElems = $(items).css({ opacity: 0 });
+        newElems.imagesLoaded(function(){
+          newElems.animate({ opacity: 1 });
+          $('#grid-water').masonry( 'appended', newElems, true );   
+        });
+        return true;
+	}
 });
 
 ias.extension(new IASSpinnerExtension());
