@@ -208,7 +208,10 @@
 
 	ias.on('rendered', function(items) {
 		console.log('run rendered');
-	 	$('#grid-water').appended(items);
+		items.imagesLoaded(function(){
+			items.animate({ opacity: 1 });
+			$('#grid-water').masonry( 'appended', items, true );   // 把请求的结果给 masonry 执行瀑布流 
+    	});
 	});
 
 	ias.extension(new IASSpinnerExtension());
