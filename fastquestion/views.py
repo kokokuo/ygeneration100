@@ -20,7 +20,7 @@ def index(request):
 		# 'fast_ques_list': fast_ques_list,
 		'online_facewall': list(online_ques_list[:40]),
 		'online_ques_list': list(online_ques_list[:15]),
-		'page_id': 1
+		'page_id': 2
 	}
 	return render(request, 'fastquestion/index.html', context)
 
