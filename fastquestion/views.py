@@ -75,5 +75,4 @@ def get_page(request, page_id):
 		'online_ques_list': online_ques_list[start_num:last_num],
 		'page_id': int(page_id) + 1
 	}
-
 	return render(request, 'fastquestion/index.html', context)

@@ -97,10 +97,6 @@ $('#grid-water').infinitescroll({
 
 });
 
-
-	
-
-
 $('#grid').imagesLoaded( function() {
 	 // jQuery masonry
 	$('#grid').masonry({
@@ -177,34 +173,25 @@ $('#grid-water').imagesLoaded( function() {
 	});
 });
 
-$('#grid-water').infinitescroll(
-	{
 
-		// selector for the paged navigation (it will be hidden)
-		navSelector  : ".pagination",
-		// selector for the NEXT link (to page 2)
-		nextSelector : ".pagination a.next",
-		// selector for all items you'll retrieve
-		itemSelector : ".grid-item-water",
 
-		// finished message
-		loading: {
-			finishedMsg: 'No more pages to load.'
-		}
-	},
+ var ias = $.ias({
+      container: "#grid-water'",
+      item: ".grid-item-water",
+      pagination: ".pagination",
+      next: ".next",
+      delay: 1200
+});
 
-	// Trigger Masonry as a callback
-	function( newElements ) {
-		// hide new items while they are loading
-		var $newElems = $( newElements ).css({ opacity: 0 });
-		// ensure that images load before adding to masonry layout
-		$newElems.imagesLoaded(function(){
-			// show elems now they're ready
-			$newElems.animate({ opacity: 1 });
-			$('#grid-water').masonry( 'appended', $newElems, true );
-		});
-	}
-);
+ias.on('render', function(items) {
+  $(items).css({ opacity: 0 });
+});
 
+ias.on('rendered', function(items) {
+  msnry.appended(items);
+});
+
+ias.extension(new IASSpinnerExtension());
+ias.extension(new IASNoneLeftExtension({html: '<div class="ias-noneleft" style="text-align:center"><p><em>You reached the end!</em></p></div>'}));
 
 
