@@ -21,7 +21,7 @@ Eason 透過與其他團員的跨領域協作與需求分析，負責網站的�
 該網站為簡易的活動網站，除了介紹內容外，也包含簡單投稿功能與上傳影片內容展現想法等後端功能。
 
 #### 平台與工具：
-使用 Python 與 Django 1.7.2 Framework 建造網站，並部署到 Heroku 上。
+使用 Python 2.7 與 Django 1.7.2 Framework 建造網站，並部署到 Heroku 上。
 
 #### 網站網址：
 百人擺臉的活動網站：http://ygeneration100.koko.guru/
