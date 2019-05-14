@@ -1,6 +1,6 @@
 # ygeneration100
 
-English Readme could [click me](../master/English.md)
+The Readme of English version could [click me](../master/English.md)
 
 ## 簡介：
 此活動網站是 2015 年 5 月參加 13th ATCC 全國大專院校商業個案大賽時所建立的活動網站建置。
