@@ -1,5 +1,7 @@
 # ygeneration100
 
+English Readme could [click me](../master/English.md)
+
 ## 簡介：
 此活動網站是 2015 年 5 月參加 13th ATCC 全國大專院校商業個案大賽時所建立的活動網站建置。
 與其他四位隊員組成一個跨校跨領域團隊，參與昇恆昌企業組，設計行銷企劃案，協助企業提升形象與業績。 
